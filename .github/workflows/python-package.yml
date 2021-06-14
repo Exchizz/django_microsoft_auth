@@ -25,11 +25,16 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-      env:
-        TOX_ENV: "py${{ matrix.python-version }}-dj${{ matrix.django-version }}"
 
     - name: Install Tox and any other packages
       run: pip install tox
+      
+    - run: |
+        py_ver="${matrix.python-version/./}"
+        ref="py$py_ver-dj${{ matrix.django-version }}"
+        echo "::set-env name=ref::$ref"
+      env:
+        TOX_ENV: ${{ github.ref }}
     
     - name: Run Tox
      # Run tox using the version of Python in `PATH`
