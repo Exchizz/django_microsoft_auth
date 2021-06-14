@@ -29,14 +29,14 @@ jobs:
     - name: Install Tox and any other packages
       run: pip install tox
       
-    - run: |
-        py_ver=${{ matrix.python-version }}
-        py_ver="${py_ver/./}"
-        test_ver="py$py_ver-dj${{ matrix.django-version }}"
-        echo "::set-env name=test_ver::$test_ver"
-      env:
-        TOX_ENV: ${{ github.test_ver }}
+   # - run: |
+   #     py_ver=${{ matrix.python-version }}
+   #     py_ver="${py_ver/./}"
+   #     test_ver="py$py_ver-dj${{ matrix.django-version }}"
+   #     echo "::set-env name=test_ver::$test_ver"
+   #   env:
+   #     TOX_ENV: ${{ github.test_ver }}
     
     - name: Run Tox
      # Run tox using the version of Python in `PATH`
-      run: tox -e ${{ env.TOX_ENV }}
+      run: tox -e "py${{ matrix.python-version }}_ver-dj${{ matrix.django-version }}
