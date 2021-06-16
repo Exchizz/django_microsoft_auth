@@ -14,7 +14,7 @@ cffi==1.14.5
     # via cryptography
 chardet==3.0.4
     # via requests
-coverage==4.5.4
+coverage==5.5
     # via
     #   -r reqs/test.in
     #   coveralls
