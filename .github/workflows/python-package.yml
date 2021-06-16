@@ -29,13 +29,8 @@ jobs:
     - name: Install Tox and any other packages
       run: pip install tox coveralls
       
-    - name: Run coverall
-      run: coveralls --service=github
-      
     - name: Coveralls
       uses: coverallsapp/github-action@master
-      env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
    # - run: |
