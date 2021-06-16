@@ -30,7 +30,7 @@ jobs:
       run: pip install tox coveralls
       
     - name: Run coverall
-      run: coveralls
+      run: coveralls --service=github
       
     - name: Coveralls
       uses: coverallsapp/github-action@master
