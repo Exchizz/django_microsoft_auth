@@ -27,7 +27,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install Tox and any other packages
-      run: pip install -U tox-travis coverall
+      run: pip install -U tox coverall
       
     - name: Run Tox
      # Run tox using the version of Python in `PATH`
@@ -37,12 +37,3 @@ jobs:
       run: coveralls --service=github
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   # - run: |
-   #     py_ver=${{ matrix.python-version }}
-   #     py_ver="${py_ver/./}"
-   #     test_ver="py$py_ver-dj${{ matrix.django-version }}"
-   #     echo "::set-env name=test_ver::$test_ver"
-   #   env:
-   #     TOX_ENV: ${{ github.test_ver }}
-    
-
