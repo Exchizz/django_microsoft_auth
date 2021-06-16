@@ -29,6 +29,10 @@ jobs:
     - name: Install Tox and any other packages
       run: pip install tox
       
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
    # - run: |
    #     py_ver=${{ matrix.python-version }}
    #     py_ver="${py_ver/./}"
