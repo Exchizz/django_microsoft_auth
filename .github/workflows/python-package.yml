@@ -32,7 +32,7 @@ jobs:
     - name: Run coverall
       run: coveralls --service=github
       env:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    # - run: |
    #     py_ver=${{ matrix.python-version }}
    #     py_ver="${py_ver/./}"
