@@ -34,6 +34,8 @@ jobs:
       
     - name: Coveralls
       uses: coverallsapp/github-action@master
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
    # - run: |
